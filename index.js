@@ -12,6 +12,14 @@ $(document).on("keypress", function() {
     }
 });
 
+$(document).on("click", function() {
+    if (!started) {
+        nextSequence();
+        $("h1").text("Level " + level);
+        started = true; // Ensure the game starts only once
+    }
+});
+
 function nextSequence() {
     userClickedPattern = []; // Clear user pattern for new sequence
     level++;
